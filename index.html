@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <div id="blueprint-render-playground"></div>
+
+    <textarea id="code_input" rows="10" cols="50" placeholder="Enter your code here..."></textarea>
+    <br>
+    <button onclick="genBluePrint()">Go</button>
+
+    <link rel="stylesheet" href="render.css" />
+    <script src="render.js"></script>
+    <script>
+      function genBluePrint() {
+        var code = document.getElementById("code_input").value;
+        var blueprint = new window.blueprintUE.render.Main(
+          code,
+          document.getElementById("blueprint-render-playground"),
+          { height: "643px" }
+        ).start();
+      }
+    </script>
+  </body>
+</html>
